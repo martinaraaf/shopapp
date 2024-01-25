@@ -1,0 +1,16 @@
+img
+{
+  height: 350px;
+    width: 100%;
+    object-fit: contain;
+    background: #f2f3f4;
+    border-radius: 1.5rem;
+}
+.product-thumb img {
+  width: 20%;
+  height: 125px;
+  object-fit: contain;
+  margin: auto;
+  border-radius: 0.5rem;
+
+}

@@ -1,0 +1,56 @@
+<!-- <div class="container d-flex justify-content-center align-items-center">
+  <h1>Login Page</h1>
+  <form #loginForm="ngForm">
+    <input #username="ngModel" ngModel name="username" type="text" />
+    <input #password="ngModel" ngModel name="password" type="password" />
+
+  </form>
+</div> -->
+<!-- src/app/login/login.component.html -->
+ <div class="container d-flex justify-content-center align-items-center">
+
+<div class="login-container w-50">
+  <h2 class="text-center">Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" method="post">
+      <label for="email">Email address:</label>
+      <input
+      type="email"
+      id="email"
+      class="form-control"
+      name="email"
+      [(ngModel)]="user.email"
+      #email="ngModel"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+      />
+      @if(email.invalid && email?.dirty || email?.touched){
+        <div id="emailHelp" class="form-text text-danger">
+          @if(email?.errors?.['required']){
+          <span>Email is required.</span>
+          } @if(email?.errors?.['pattern']){
+          <span>Invalid email format.</span>
+          }
+        </div>
+      }
+      <label for="password">Password:</label>
+      <input type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      [(ngModel)]="user.password"
+      #password="ngModel"
+      required
+      />
+      @if(password.invalid && password?.dirty || password?.touched){
+        <div id="nameHelp" class="form-text text-danger">
+          @if(password?.errors?.['required']){
+            <span>Password is required.</span>
+            }
+      </div>
+    }
+    <div class="d-flex justify-content-center">
+    <button type="submit" class="btn btn-dark mt-3" [disabled]="loginForm.invalid">Login</button>
+    </div>
+  </form>
+</div>
+</div>

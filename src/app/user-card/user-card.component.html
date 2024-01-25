@@ -1,0 +1,7 @@
+<div class="container py-5">
+  <div class="row">
+    @for(user of users; track user.id ; let i = $index){
+      <div class="col-lg-3 py-3 text-center">
+      <app-users [usercard]="user" (selectedUser)="receiveFromChild($event)"></app-users>
+      </div>
+    }

@@ -1,0 +1,22 @@
+<div class="card h-100 card-border">
+  <div class="card-body">
+    <a [routerLink]="['/product-details',(productCard.id)]">
+    <img [src]="productCard.thumbnail" class="card-img-top pb-3" [alt]="productCard.title" />
+    <div class="d-flex justify-content-between align-items-start">
+    <h4>{{productCard.title}}</h4>
+    @if(productCard.stock > 0){
+      <span class="badge text-bg-success">On Stock</span>
+      } @else {
+      <span class="badge text-bg-danger">Out Of Stock</span>
+      }
+      </div>
+    <p>{{ productCard.description }}</p>
+    <p>{{ productCard.phone }}</p>
+    <p>{{ productCard | discount }}</p>
+
+</a>
+    <button class="btn btn-danger" (click)="deleteProduct(productCard.id)">Delete Product</button>
+    <!-- <button class="btn btn-success mx-2" (click)="redirectToDetails(productCard.id)">Redirect to details</button> -->
+
+  </div>
+</div>

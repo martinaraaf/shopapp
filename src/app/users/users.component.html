@@ -1,0 +1,19 @@
+
+    <div class="card h-100 card-border">
+      <div class="card-body">
+        <img [src]="usercard.image" class="card-img-top pb-3" [alt]="usercard.title" />
+        <p>{{ usercard.username }}
+          @if(usercard.is_verified){
+            <span class="fa fa-star star text-success"></span>
+            <small class="text-success">Verified</small>
+            } @else {
+            <span class="fa fa-star star text-danger"></span>
+            <small class="text-danger">Unverified</small>
+            }
+          </p>
+        <p>{{ usercard.email }}</p>
+        <p>{{ usercard.phone }}</p>
+        <button class="btn btn-danger" (click)="deleteUser(usercard.id)">Delete User</button>
+      </div>
+    </div>
+

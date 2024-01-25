@@ -1,0 +1,9 @@
+<div class="container py-5">
+  <div class="row">
+    @for(product of products; track product.id ; let i = $index){
+      <div class="col-lg-3 py-3 text-center">
+        <app-product-card  [productCard]="product" (selectedProduct)="receiveFromChild($event)"></app-product-card>
+
+
+      </div>
+    }

@@ -1,0 +1,44 @@
+<section class="container py-5">
+<div class="row m-0 ">
+  <div class="col-lg-6">
+    <img [src]="productItem.thumbnail" [alt]="productItem.title" />
+    <div class="product-thumb d-flex py-3">
+      <img [src]="productItem.images[1]">
+      <img [src]="productItem.images[2]" >
+      <img [src]="productItem.images[3]">
+      <img [src]="productItem.images[4]">
+  </div>
+  </div>
+  <div class="col-lg-6">
+  <div class="product-details">
+                  <h4 class="category-link">{{productItem.category}}</h4>
+                  <h1>{{productItem.title}}</h1>
+                  <div class="star-rating" >
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star fa-star-half-stroke"></i>
+                     {{productItem.rating}}
+                  </div>
+              <h2 class="price sec-color">{{
+                productItem.price + " " + "EG"
+              }}</h2>
+              <p>{{productItem.description}}</p>
+              <ul class="product-details-ul">
+              <li><b>Brand: </b>
+               <span>{{
+                productItem.brand
+              }}</span></li>
+              <li><b>Availability On Stock: </b> <span>{{
+                productItem.stock
+              }}</span> Items </li>
+              <li><b>Shipping: </b> <span> 5 work days shipping</span></li>
+              <li><b>Weight: </b> <span>0.5 kg</span></li>
+
+          </ul>
+              <button href="#" class="btn btn-dark">ADD TO CARD</button>
+              </div>
+  </div>
+</div>
+</section>
